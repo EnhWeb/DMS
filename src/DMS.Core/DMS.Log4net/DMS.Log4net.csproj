@@ -2,10 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <Version>1.3.2020.0221</Version>
+    <Version>2.2020.0221</Version>
     <Description>1.3.2020.0117 错误信息优化
-1.3.2020.0221 添加Source位置</Description>
+1.3.2020.0221 添加Source位置
+2.2020.0221 update statecode 500 to 200</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyVersion>2.2020.221.0</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
