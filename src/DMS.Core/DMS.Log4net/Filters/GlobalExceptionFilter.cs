@@ -49,7 +49,8 @@ namespace DMS.Log4net.Filters
         {
             public InternalServerErrorObjectResult(object value) : base(value)
             {
-                StatusCode = StatusCodes.Status500InternalServerError;
+                //StatusCode = StatusCodes.Status500InternalServerError;
+                StatusCode = StatusCodes.Status200OK;
             }
         }
     }
