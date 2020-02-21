@@ -29,13 +29,13 @@ namespace DMS.Log4net.Filters
             //这里面是自定义的操作记录日志
             if (context.Exception.GetType() == typeof(UserOperationException))
             {
-                json.errmsg = $"用户自定义错误，Message:{context.Exception.Message} {context.Exception.InnerException?.Message}";
+                json.errmsg = $"用户自定义错误，Message:{context.Exception.Message} {context.Exception.InnerException?.Message} {context.Exception.InnerException?.Source}";
                 Logger.Error($"{json.errmsg}，StackTrace:{context.Exception.StackTrace} {context.Exception.InnerException?.Message} {context.Exception.InnerException?.StackTrace}");
                 context.Result = new BadRequestObjectResult(json);
             }
             else
             {
-                json.errmsg = $"内部错误，Message:{context.Exception.Message} {context.Exception.InnerException?.Message}";
+                json.errmsg = $"内部错误，Message:{context.Exception.Message} {context.Exception.InnerException?.Message} {context.Exception.InnerException?.Source}";
                 Logger.Error($"{json.errmsg}，StackTrace:{context.Exception.StackTrace} {context.Exception.InnerException?.Message} {context.Exception.InnerException?.StackTrace}");
                 context.Result = new InternalServerErrorObjectResult(json);
             }
